@@ -1,6 +1,7 @@
 use anchor_lang::prelude::*;
+use anchor_lang::solana_program::instruction::Instruction;
 use anchor_lang::{Discriminator, InstructionData};
-use solana_gpt_oracle::{ContextAccount, Counter, Identity};
+use solana_gpt_oracle::{ContextAccount, Identity};
 use tuktuk_program::{
     compile_transaction,
     tuktuk::{
@@ -16,8 +17,6 @@ declare_id!("DqVX6kVd1rZu3EA8NMQtpm33AARfB5Hm15YLFWJCSPJS");
 
 #[program]
 pub mod simple_agent {
-
-    use anchor_lang::solana_program::{instruction::Instruction, program::invoke};
 
     use super::*;
 
@@ -70,7 +69,7 @@ pub mod simple_agent {
         Ok(())
     }
 
-    pub fn close(ctx: Context<CloseAgent>) -> Result<()> {
+    pub fn close(_ctx: Context<CloseAgent>) -> Result<()> {
         Ok(())
     }
 
